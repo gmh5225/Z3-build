@@ -24,7 +24,7 @@ jobs:
         name: libz3-64
         path: |
           build64/Release/*
-          src/api/[z3].*?[.]h
+          src/api/*.h
           src/api/c++/*.h
           
 
