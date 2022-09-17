@@ -18,13 +18,19 @@ jobs:
         cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DZ3_BUILD_LIBZ3_SHARED=OFF -A Win32
         cmake --build build --config ${{ env.BUILD_TYPE }} --parallel
         
+    - name: Copy SDK
+      run: |
+          mkdir build\include
+          copy src\api\*.h build\include /y
+          mkdir build\lib
+          copy build\Release\*.* build\lib /y
+        
     - name: Upload artifacts
       uses: actions/upload-artifact@main
       with:
         name: libz3-32
         path: |
-          build/Release/*
-          src/api/*.h
-          src/api/c++/*.h
+          build/include/*
+          build/lib/*
 
         
