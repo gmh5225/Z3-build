@@ -22,6 +22,9 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: libz3-32
-        path: build/Release/*
+        path: |
+          build/Release/*
+          src/api/[z3].*?[.]h
+          src/api/c++/*.h
 
         
