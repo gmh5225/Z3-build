@@ -21,9 +21,9 @@ jobs:
     - name: Copy SDK
       run: |
           mkdir build\include
-          copy src\api\*.h build\include /y
+          copy src\api\*.h build\include
           mkdir build\lib
-          copy build\Release\*.* build\lib /y
+          copy build\Release\*.* build\lib
         
     - name: Upload artifacts
       uses: actions/upload-artifact@main
