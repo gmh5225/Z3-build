@@ -22,6 +22,7 @@ jobs:
       run: |
         mkdir build64\include
         copy src\api\*.h build64\include
+        copy src\api\c++\*.h build64\include
         mkdir build64\lib
         copy build64\Release\*.* build64\lib
         
