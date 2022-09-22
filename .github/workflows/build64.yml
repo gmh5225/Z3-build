@@ -16,7 +16,7 @@ jobs:
   
     - name: Build
       run: |
-        cmake -B build64 -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DZ3_BUILD_LIBZ3_SHARED=OFF -DMSVC_STATIC=ON
+        cmake -B build64 -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DZ3_BUILD_LIBZ3_SHARED=OFF -DZ3_BUILD_LIBZ3_MSVC_STATIC=ON
         cmake --build build64 --config ${{ env.BUILD_TYPE }} --parallel
         
     - name: Copy SDK
