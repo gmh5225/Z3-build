@@ -11,11 +11,12 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v3
       with:
-        repository: Z3Prover/z3
+        repository: gmh5225/z3
+        ref: Branch_MSVC_STATIC
   
     - name: Build
       run: |
-        cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DZ3_BUILD_LIBZ3_SHARED=OFF -A Win32
+        cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} -DZ3_BUILD_LIBZ3_SHARED=OFF -DMSVC_STATIC=ON -A Win32
         cmake --build build --config ${{ env.BUILD_TYPE }} --parallel
         
     - name: Copy SDK
