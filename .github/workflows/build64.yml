@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: gmh5225/z3
-        ref: Branch_MSVC_STATIC
+        ref: master
   
     - name: Build
       run: |
