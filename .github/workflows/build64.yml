@@ -31,7 +31,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@main
       with:
-        name: libz3-64
+        name: libz3-64-${{ github.run_number }}
         path: |
           build64/include/*
           build64/lib/*
